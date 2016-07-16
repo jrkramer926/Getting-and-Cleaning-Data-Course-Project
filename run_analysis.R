@@ -40,7 +40,7 @@ final_x <- x_data[,column_index]
 
 ##below will read in activity_labels.txt and label rows accordingly
 activity_labels <- read.table("activity_labels.txt")
-activity <- merge(y_data, activity_labels)
+activity <- join(y_data, activity_labels, type = "left")
 final_y <- data.frame(activity[1:10299,2])
 colnames(final_y) <- "activity"
 
@@ -49,7 +49,7 @@ final_data <- cbind(subject_data,final_y, final_x)
 
 ##below summarizes final_data and provides the average for each uniqie combination
 #of subject and activity
-tidydata <- ddply(final_data, .(subject, activity), function(x) colMeans(x[,3:ncol(final_data)]))
+tidydata <- ddply(final_data, .(subject, activity), function(x) colMeans(x[,3:68], na.rm = TRUE))
 
 ##below exports our tidydata to the directory
 write.table(tidydata,"tidydata.txt", row.names = FALSE)
