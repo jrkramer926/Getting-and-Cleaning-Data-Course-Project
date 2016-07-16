@@ -1,5 +1,23 @@
 #run_analysis.R Codebook
 
+##Description
+`run_analysis.R` analyzes data from  the [UHI HAR Dataset] (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip). The data measures motion across 30 subjects wearing a FitBit. It combines source files and column/row maps to create an easier to read data structure. 
+
+`run_analysis.R` displays measurements from certain motions across a specific subject. 
+
+There are 6 different self explanatory motions:
+
+1. WALKING
+2. WALKING_UPSTAIRS
+3. WALKING_DOWNSTAIRS
+4. SITTING
+5. STANDING
+6. LAYING
+
+and 30 different subjects. 
+
+For additional information regarding the dataset, please visit the [UHI webpage] (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
 ##Variables (alphabetical)
 
 `activity` - Displays activity ID and activity Name in reference to `y_data`.
